@@ -1,0 +1,43 @@
+%{
+open Lang.Ast
+
+let helper x = x * x
+%}
+
+// start token
+%start start
+
+// tokens, used by lexer
+%token <int> INT
+%token LEFT_PAREN
+%token RIGHT_PAREN
+%token STAR
+%token SLASH
+%token PLUS
+%token MINUS
+%token EOF
+
+// precedence and associativity
+%left PLUS MINUS
+%left STAR SLASH
+
+// return type of parser, marked by start token
+%type <Expr option> start
+
+%%
+
+// production rules:
+// rule name: matching expression with TERMINALS and non-terminals { action as F# code }
+start: prog { $1 }
+
+prog:
+  | EOF { None }
+  | expr { Some $1 }
+
+expr:
+  | INT { Int $1 }
+  | LEFT_PAREN expr RIGHT_PAREN { Paren $2 }
+  | expr PLUS expr { InfixApp ($1, Operator.AddOp, $3) }
+  | expr MINUS expr { InfixApp ($1, Operator.SubOp, $3) }
+  | expr STAR expr { InfixApp ($1, Operator.MulOp, $3) }
+  | expr SLASH expr { InfixApp ($1, Operator.DivOp, $3) }

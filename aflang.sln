@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4F21FB8B-AE2F-4003-9A39-FFDF79E55257}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AfLang", "src\AfLang\AfLang.fsproj", "{0987D949-35DA-440C-8383-568A21A17F60}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "AfLang.Tests", "src\AfLang.Tests\AfLang.Tests.fsproj", "{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0987D949-35DA-440C-8383-568A21A17F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0987D949-35DA-440C-8383-568A21A17F60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0987D949-35DA-440C-8383-568A21A17F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0987D949-35DA-440C-8383-568A21A17F60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0987D949-35DA-440C-8383-568A21A17F60} = {4F21FB8B-AE2F-4003-9A39-FFDF79E55257}
+		{EDFB3DCD-DDA4-4BFE-957B-3C243651BAD7} = {4F21FB8B-AE2F-4003-9A39-FFDF79E55257}
+	EndGlobalSection
+EndGlobal
