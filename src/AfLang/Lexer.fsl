@@ -17,6 +17,7 @@ let newline (lexbuf: LexBuffer<_>) =
 let int = ['-' '+']? ['0'-'9']+
 let white = [' ' '\t']+
 let newline = '\r' | '\n' | "\r\n"
+let ident = ['a'-'z']+
 
 // rules
 rule read =
@@ -30,5 +31,8 @@ rule read =
   | '-'      { MINUS }
   | '('      { LEFT_PAREN }
   | ')'      { RIGHT_PAREN }
+  | "let"    { LET }
+  | ident    { IDENT (lexeme lexbuf) }
+  | '='      { EQUALS }
   | eof      { EOF }
   | _ { raise (Exception (sprintf "SyntaxError: Unexpected char: '%s' Line: %d Column: %d" (lexeme lexbuf) (lexbuf.StartPos.Line + 1) lexbuf.StartPos.Column)) }

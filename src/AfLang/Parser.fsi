@@ -2,21 +2,27 @@
 module Parser
 type token = 
   | EOF
+  | EQUALS
+  | LET
   | MINUS
   | PLUS
   | SLASH
   | STAR
   | RIGHT_PAREN
   | LEFT_PAREN
+  | IDENT of (string)
   | INT of (int)
 type tokenId = 
     | TOKEN_EOF
+    | TOKEN_EQUALS
+    | TOKEN_LET
     | TOKEN_MINUS
     | TOKEN_PLUS
     | TOKEN_SLASH
     | TOKEN_STAR
     | TOKEN_RIGHT_PAREN
     | TOKEN_LEFT_PAREN
+    | TOKEN_IDENT
     | TOKEN_INT
     | TOKEN_end_of_input
     | TOKEN_error

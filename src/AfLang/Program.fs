@@ -12,14 +12,18 @@ let parse source =
         None
 
 let repl () =
+    let context = System.Collections.Generic.Dictionary<string, int>()
     printf "> "
     let mutable input = System.Console.ReadLine()
 
-    while input <> "q" do
+    while input <> "#q" do
         match parse input with
         | Some ast ->
-            let r = run ast
-            printfn $"%d{r}"
+            try
+                let r = eval context ast
+                printfn $"%d{r}"
+            with e ->
+                printfn $"{e.Message}"
         | None -> printfn "failed to parse"
 
         printf "> "
