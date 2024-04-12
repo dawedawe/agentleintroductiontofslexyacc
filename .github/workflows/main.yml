@@ -24,11 +24,11 @@ jobs:
 
       - name: Install node_modules
         run: bun i
-        working_dir: ./src/AfLang.Js
+        working-directory: ./src/AfLang.Js
 
       - name: Build website
         run: bun run build
-        working_dir: ./src/AfLang.Js
+        working-directory: ./src/AfLang.Js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
