@@ -127,16 +127,16 @@ let _fsyacc_dataOfToken (t:token) =
   | LEFT_PAREN  -> (null : System.Object) 
   | IDENT _fsyacc_x -> Microsoft.FSharp.Core.Operators.box _fsyacc_x 
   | INT _fsyacc_x -> Microsoft.FSharp.Core.Operators.box _fsyacc_x 
-let _fsyacc_gotos = [| 0us;65535us;1us;65535us;0us;1us;1us;65535us;0us;2us;7us;65535us;0us;4us;7us;8us;15us;10us;16us;11us;17us;12us;18us;13us;21us;14us;|]
+let _fsyacc_gotos = [| 0us;65535us;1us;65535us;0us;1us;1us;65535us;0us;2us;7us;65535us;0us;4us;8us;9us;16us;11us;17us;12us;18us;13us;19us;14us;22us;15us;|]
 let _fsyacc_sparseGotoTableRowOffsets = [|0us;1us;3us;5us;|]
-let _fsyacc_stateToProdIdxsTableElements = [| 1us;0us;1us;0us;1us;1us;1us;2us;5us;3us;7us;8us;9us;10us;1us;4us;1us;5us;1us;6us;5us;6us;7us;8us;9us;10us;1us;6us;5us;7us;7us;8us;9us;10us;5us;7us;8us;8us;9us;10us;5us;7us;8us;9us;9us;10us;5us;7us;8us;9us;10us;10us;5us;7us;8us;9us;10us;11us;1us;7us;1us;8us;1us;9us;1us;10us;1us;11us;1us;11us;1us;11us;|]
-let _fsyacc_stateToProdIdxsTableRowOffsets = [|0us;2us;4us;6us;8us;14us;16us;18us;20us;26us;28us;34us;40us;46us;52us;58us;60us;62us;64us;66us;68us;70us;|]
-let _fsyacc_action_rows = 22
-let _fsyacc_actionTableElements = [|5us;32768us;0us;3us;2us;19us;8us;7us;9us;6us;10us;5us;0us;49152us;0us;16385us;0us;16386us;4us;16387us;3us;16us;4us;15us;5us;18us;6us;17us;0us;16388us;0us;16389us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;5us;32768us;3us;16us;4us;15us;5us;18us;6us;17us;7us;9us;0us;16390us;2us;16391us;5us;18us;6us;17us;2us;16392us;5us;18us;6us;17us;0us;16393us;0us;16394us;4us;16395us;3us;16us;4us;15us;5us;18us;6us;17us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;1us;32768us;9us;20us;1us;32768us;1us;21us;4us;32768us;2us;19us;8us;7us;9us;6us;10us;5us;|]
-let _fsyacc_actionTableRowOffsets = [|0us;6us;7us;8us;9us;14us;15us;16us;21us;27us;28us;31us;34us;35us;36us;41us;46us;51us;56us;61us;63us;65us;|]
-let _fsyacc_reductionSymbolCounts = [|1us;1us;1us;1us;1us;1us;3us;3us;3us;3us;3us;4us;|]
+let _fsyacc_stateToProdIdxsTableElements = [| 1us;0us;1us;0us;1us;1us;1us;2us;5us;3us;7us;8us;9us;10us;1us;3us;1us;4us;1us;5us;1us;6us;5us;6us;7us;8us;9us;10us;1us;6us;5us;7us;7us;8us;9us;10us;5us;7us;8us;8us;9us;10us;5us;7us;8us;9us;9us;10us;5us;7us;8us;9us;10us;10us;5us;7us;8us;9us;10us;11us;1us;7us;1us;8us;1us;9us;1us;10us;1us;11us;1us;11us;1us;11us;|]
+let _fsyacc_stateToProdIdxsTableRowOffsets = [|0us;2us;4us;6us;8us;14us;16us;18us;20us;22us;28us;30us;36us;42us;48us;54us;60us;62us;64us;66us;68us;70us;72us;|]
+let _fsyacc_action_rows = 23
+let _fsyacc_actionTableElements = [|5us;32768us;0us;3us;2us;20us;8us;8us;9us;7us;10us;6us;0us;49152us;0us;16385us;0us;16386us;5us;32768us;0us;5us;3us;17us;4us;16us;5us;19us;6us;18us;0us;16387us;0us;16388us;0us;16389us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;5us;32768us;3us;17us;4us;16us;5us;19us;6us;18us;7us;10us;0us;16390us;2us;16391us;5us;19us;6us;18us;2us;16392us;5us;19us;6us;18us;0us;16393us;0us;16394us;4us;16395us;3us;17us;4us;16us;5us;19us;6us;18us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;1us;32768us;9us;21us;1us;32768us;1us;22us;4us;32768us;2us;20us;8us;8us;9us;7us;10us;6us;|]
+let _fsyacc_actionTableRowOffsets = [|0us;6us;7us;8us;9us;15us;16us;17us;18us;23us;29us;30us;33us;36us;37us;38us;43us;48us;53us;58us;63us;65us;67us;|]
+let _fsyacc_reductionSymbolCounts = [|1us;1us;1us;2us;1us;1us;3us;3us;3us;3us;3us;4us;|]
 let _fsyacc_productionToNonTerminalTable = [|0us;1us;2us;2us;3us;3us;3us;3us;3us;3us;3us;3us;|]
-let _fsyacc_immediateActions = [|65535us;49152us;16385us;16386us;65535us;16388us;16389us;65535us;65535us;16390us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|]
+let _fsyacc_immediateActions = [|65535us;49152us;16385us;16386us;65535us;16387us;16388us;16389us;65535us;65535us;16390us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;|]
 let _fsyacc_reductions = lazy [|
 # 141 "Parser.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
@@ -175,7 +175,7 @@ let _fsyacc_reductions = lazy [|
                 (
                    (
 # 38 "Parser.fsy"
-                                Some _1 
+                                    Some _1 
                    )
 # 38 "Parser.fsy"
                  : 'gentype_prog));

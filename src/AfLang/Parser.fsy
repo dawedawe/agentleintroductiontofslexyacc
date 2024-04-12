@@ -35,7 +35,7 @@ start: prog { $1 }
 
 prog:
   | EOF { None }
-  | expr { Some $1 }
+  | expr EOF { Some $1 }
 
 expr:
   | INT { Int $1 }
