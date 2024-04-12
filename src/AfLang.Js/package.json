@@ -5,12 +5,19 @@
   "description": "",
   "main": "/out/Program.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bunx --bun vite",
+    "build": "bunx --bun vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vite": "^5.2.8"
-  }
+    "vite": "^5.2.8",
+    "vite-plugin-fable": "^0.0.26"
+  },
+  "trustedDependencies": [
+    "esbuild",
+    "vite-plugin-fable"
+  ]
 }
