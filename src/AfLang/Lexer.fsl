@@ -14,7 +14,7 @@ let newline (lexbuf: LexBuffer<_>) =
 }
 
 // regex macros
-let int = ['-' '+']? ['0'-'9']+
+let int = ['0'-'9']+
 let white = [' ' '\t']+
 let newline = '\r' | '\n' | "\r\n"
 let ident = ['a'-'z']+

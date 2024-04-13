@@ -15,9 +15,15 @@ let parse source =
 
 [<Theory>]
 [<InlineData("10 + 2", 12)>]
+[<InlineData("10+2", 12)>]
 [<InlineData("10 - 2", 8)>]
+[<InlineData("10-2", 8)>]
+[<InlineData("10--2", 12)>]
+[<InlineData("10 - -2", 12)>]
 [<InlineData("10 * 2", 20)>]
+[<InlineData("10*2", 20)>]
 [<InlineData("10 / 2", 5)>]
+[<InlineData("10/2", 5)>]
 let ``basic math tests`` (source, expected) =
     let ast = parse source
     let r = run ast

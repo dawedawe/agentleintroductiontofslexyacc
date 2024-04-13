@@ -39,6 +39,7 @@ prog:
 
 expr:
   | INT { Int $1 }
+  | MINUS INT { Int (-1 * $2)}
   | IDENT { Ident $1 }
   | LEFT_PAREN expr RIGHT_PAREN { Paren $2 }
   | expr PLUS expr { InfixApp ($1, Operator.AddOp, $3) }
