@@ -2,6 +2,7 @@
 module Parser
 type token = 
   | EOF
+  | SEMICOLON
   | EQUALS
   | LET
   | MINUS
@@ -14,6 +15,7 @@ type token =
   | INT of (int)
 type tokenId = 
     | TOKEN_EOF
+    | TOKEN_SEMICOLON
     | TOKEN_EQUALS
     | TOKEN_LET
     | TOKEN_MINUS
@@ -30,6 +32,7 @@ type nonTerminalId =
     | NONTERM__startstart
     | NONTERM_start
     | NONTERM_prog
+    | NONTERM_exprs
     | NONTERM_expr
 /// This function maps tokens to integer indexes
 val tagOfToken: token -> int

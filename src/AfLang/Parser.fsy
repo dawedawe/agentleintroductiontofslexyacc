@@ -18,6 +18,7 @@ let helper x = x * x
 %token MINUS
 %token LET
 %token EQUALS
+%token SEMICOLON
 %token EOF
 
 // precedence and associativity
@@ -35,14 +36,18 @@ start: prog { $1 }
 
 prog:
   | EOF { None }
-  | expr EOF { Some $1 }
+  | exprs EOF { Some (Expr.Decls (List.rev $1)) }
+
+exprs:
+  | exprs expr { $2 :: $1 }
+  | expr { [ $1 ] }
 
 expr:
+  | LET IDENT EQUALS expr SEMICOLON { Decl ($2, $4)}
   | INT { Int $1 }
   | IDENT { Ident $1 }
   | LEFT_PAREN expr RIGHT_PAREN { Paren $2 }
-  | expr PLUS expr { InfixApp ($1, Operator.AddOp, $3) }
+  | expr PLUS expr  { InfixApp ($1, Operator.AddOp, $3) }
   | expr MINUS expr { InfixApp ($1, Operator.SubOp, $3) }
-  | expr STAR expr { InfixApp ($1, Operator.MulOp, $3) }
+  | expr STAR expr  { InfixApp ($1, Operator.MulOp, $3) }
   | expr SLASH expr { InfixApp ($1, Operator.DivOp, $3) }
-  | LET IDENT EQUALS expr { Decl ($2, $4) }

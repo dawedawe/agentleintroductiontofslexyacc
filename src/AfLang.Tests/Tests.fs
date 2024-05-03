@@ -65,8 +65,8 @@ let ``parens on the left work`` (source, expected) =
     Assert.Equal(expected, r)
 
 [<Theory>]
-[<InlineData("let x = 3", 3)>]
-[<InlineData("let x = 3 + 3 * 10", 33)>]
+[<InlineData("let x = 3;", 3)>]
+[<InlineData("let x = 3 + 3 * 10;", 33)>]
 let ``let bindings work`` (source, expected) =
     let ast = parse source
     let r = run ast
@@ -74,7 +74,7 @@ let ``let bindings work`` (source, expected) =
 
 [<Fact>]
 let ``programs work`` () =
-    let source = [ "let a = 3"; "let b = 10 + a"; "let c = b * 2"; "c" ]
-    let program = List.map parse source
-    let r = execute program
+    let source = "let a = 3; let b = 10 + a; let c = b * 2; c"
+    let ast = parse source
+    let r = run ast
     Assert.Equal(26, r)

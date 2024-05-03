@@ -8,6 +8,7 @@ module Ast =
         | Paren of Expr
         | InfixApp of (Expr * Operator * Expr)
         | Ident of string
+        | Decls of Expr list
 
     and Operator =
         | MulOp
@@ -42,6 +43,9 @@ module Interpreter =
                 | SubOp -> (-)
 
             f (eval context left) (eval context right)
+        | Expr.Decls decls ->
+            decls |> Seq.map (eval context) |> Seq.last
+            
 
     let run (expr: Expr) =
         let context = Dictionary<string, int>()
