@@ -2,7 +2,7 @@
 module Parser
 type token = 
   | EOF
-  | SEMICOLON
+  | NEWLINE
   | EQUALS
   | LET
   | MINUS
@@ -15,7 +15,7 @@ type token =
   | INT of (int)
 type tokenId = 
     | TOKEN_EOF
-    | TOKEN_SEMICOLON
+    | TOKEN_NEWLINE
     | TOKEN_EQUALS
     | TOKEN_LET
     | TOKEN_MINUS

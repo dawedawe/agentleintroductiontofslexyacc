@@ -17,23 +17,24 @@ let newline (lexbuf: LexBuffer<_>) =
 let int = ['-' '+']? ['0'-'9']+
 let white = [' ' '\t']+
 let newline = '\r' | '\n' | "\r\n"
+let emptyline = white* newline
 let ident = ['a'-'z']+
 
 // rules
 rule read =
   parse
-  | white    { read lexbuf }
-  | newline  { newline lexbuf; read lexbuf }
-  | int      { INT (int (lexeme lexbuf)) }
-  | '*'      { STAR }
-  | '/'      { SLASH }
-  | '+'      { PLUS }
-  | '-'      { MINUS }
-  | '('      { LEFT_PAREN }
-  | ')'      { RIGHT_PAREN }
-  | "let"    { LET }
-  | ident    { IDENT (lexeme lexbuf) }
-  | '='      { EQUALS }
-  | ';'      { SEMICOLON }
-  | eof      { EOF }
-  | _ { raise (Exception (sprintf "SyntaxError: Unexpected char: '%s' Line: %d Column: %d" (lexeme lexbuf) (lexbuf.StartPos.Line + 1) lexbuf.StartPos.Column)) }
+  | white     { read lexbuf }
+  | emptyline { newline lexbuf; read lexbuf }
+  | newline   { newline lexbuf; NEWLINE }
+  | int       { INT (int (lexeme lexbuf)) }
+  | '*'       { STAR }
+  | '/'       { SLASH }
+  | '+'       { PLUS }
+  | '-'       { MINUS }
+  | '('       { LEFT_PAREN }
+  | ')'       { RIGHT_PAREN }
+  | "let"     { LET }
+  | ident     { IDENT (lexeme lexbuf) }
+  | '='       { EQUALS }
+  | eof       { EOF }
+  | _         { raise (Exception (sprintf "SyntaxError: Unexpected char: '%s' Line: %d Column: %d" (lexeme lexbuf) (lexbuf.StartPos.Line + 1) lexbuf.StartPos.Column)) }

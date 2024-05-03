@@ -18,7 +18,7 @@ let helper x = x * x
 %token MINUS
 %token LET
 %token EQUALS
-%token SEMICOLON
+%token NEWLINE
 %token EOF
 
 // precedence and associativity
@@ -43,9 +43,11 @@ exprs:
   | expr { [ $1 ] }
 
 expr:
-  | LET IDENT EQUALS expr SEMICOLON { Decl ($2, $4)}
+  | LET IDENT EQUALS expr { Decl ($2, $4)}
+  | LET IDENT EQUALS expr NEWLINE { Decl ($2, $4)}
   | INT { Int $1 }
   | IDENT { Ident $1 }
+  | IDENT NEWLINE { Ident $1 }
   | LEFT_PAREN expr RIGHT_PAREN { Paren $2 }
   | expr PLUS expr  { InfixApp ($1, Operator.AddOp, $3) }
   | expr MINUS expr { InfixApp ($1, Operator.SubOp, $3) }
